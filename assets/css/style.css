@@ -11,3 +11,17 @@
 body {
     font-family: Poppins, sans-serif;
 }
+
+header {
+    background-color: #5100d2;
+    text-align: center;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+
+header #title {
+    color: white;
+    padding: 15px;
+}
