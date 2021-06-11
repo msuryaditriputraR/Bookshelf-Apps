@@ -13,7 +13,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    /* outline: none; */
+    outline: none;
 }
 
 body {
@@ -49,6 +49,15 @@ header #title {
 
 #left {}
 
+#right {
+    display: flex;
+}
+
+.d-block {
+    display: block;
+}
+
+/* Button Style */
 .btn {
     background-color: var(--main-color);
     border: 0px;
@@ -60,6 +69,7 @@ header #title {
     cursor: pointer;
 }
 
+/* Icons style */
 .bi-plus-lg,
 .bi-funnel-fill {
     font-size: 18px;
@@ -67,10 +77,7 @@ header #title {
     margin-right: 6px;
 }
 
-#right {
-    display: flex;
-}
-
+/*  Menu Dropdown Filter */
 .dropdown-filter {
     position: relative;
     display: inline-block;
@@ -90,14 +97,25 @@ header #title {
     display: none;
 }
 
-.d-block {
-    display: block;
-}
-
 .dropdown-filter .dropdown-filter-menu .menu {
     font-size: .9rem;
 }
 
 .dropdown-filter .dropdown-filter-menu .menu label {
     margin-left: 5px;
+}
+
+/* Input Search */
+.search {
+    border: 1px solid rgb(202, 202, 202);
+    margin-right: 15px;
+    border-radius: 5px;
+    padding: 0 10px;
+    line-height: 2rem;
+    width: 250px;
+}
+
+.search .input-search {
+    border: 0px;
+    padding: 0 5px;
 }
