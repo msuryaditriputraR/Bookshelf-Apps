@@ -17,18 +17,27 @@
         <div class="container">
             <div id="top">
                 <div id="left">
-                    <button class="btn-tambah"><i class="bi bi-plus"></i>Add Book</button>
+                    <button class="btn"><i class="bi bi-plus-lg"></i>Add Book</button>
                 </div>
                 <div id="right">
-                    <input type="text" class="input-search" placeholder="Type Name Book and Enter">
+                    <input type="text" class="input-search" placeholder="Type Name Book">
                     <div class="dropdown-filter">
-                        <i class="bi bi-funnel-fill"></i>
+                        <button class="btn">
+                            <i class="bi bi-funnel-fill"></i> Filter
+                        </button>
                         <div class="dropdown-filter-menu">
-                            <ul>
-                                <li id="all">All</li>
-                                <li id="completed">Completed Books</li>
-                                <li id="uncompleted">Uncompleted Books</li>
-                            </ul>
+                            <div class="menu">
+                                <input type="checkbox" id="all" value="all">
+                                <label for="all">All</label>
+                            </div>
+                            <div class="menu">
+                                <input type="checkbox" id="completed" value="completed">
+                                <label for="completed">Completed Books</label>
+                            </div>
+                            <div class="menu">
+                                <input type="checkbox" id="uncompleted" value="uncompleted">
+                                <label for="uncompleted">Uncompleted Books</label>
+                            </div>
                         </div>
                     </div>
                 </div>
