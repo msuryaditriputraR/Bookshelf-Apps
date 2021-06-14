@@ -8,7 +8,8 @@
     --main-color: #5100d2;
     --green-color: #34b334;
     --red-color: #ff0000;
-    --yellow-color: #ffff00;
+    --grey-color: #888888;
+    --text-green: #22811c;
 }
 
 /* resetcss */
@@ -45,7 +46,8 @@ header #title {
     width: 80%;
 }
 
-#top {
+#top,
+.card-header {
     display: flex;
     justify-content: space-between;
 }
@@ -75,14 +77,6 @@ header #title {
 
 .btn-main {
     background-color: var(--main-color);
-}
-
-.btn-green {
-    background-color: var(--green-color);
-}
-
-.btn-red {
-    background-color: var(--red-color);
 }
 
 .btn-yellow {
@@ -149,4 +143,42 @@ header #title {
     border-radius: 5px;
     box-shadow: 0px 3px 2px rgba(180, 180, 180, 0.4);
     padding: 20px;
+}
+
+.text-title {
+    color: var(--main-color);
+}
+
+.text-subtitle {
+    color: #5e5e5e;
+    font-weight: 300;
+}
+
+.text-completed {
+    font-size: .87em;
+    margin-top: 5px;
+    font-weight: 300;
+    color: #838383;
+
+}
+
+.completed {
+    color: var(--text-green);
+    font-weight: bold;
+}
+
+.btn-green {
+    background-color: var(--green-color);
+}
+
+.btn-red {
+    background-color: var(--red-color);
+}
+
+.btn-grey {
+    background-color: var(--grey-color);
+}
+
+.card-footer {
+    margin-top: 30px;
 }
