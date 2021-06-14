@@ -193,6 +193,15 @@ header #title {
     z-index: 100;
     position: fixed;
     background-color: rgba(70, 70, 70, 0.8);
+    display: none;
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal.show .modal-content {
+    animation: modal .5s;
 }
 
 .modal .modal-content {
@@ -256,4 +265,15 @@ header #title {
 
 .modal-content .footer-content {
     text-align: center;
+}
+
+/* animation */
+@keyframes modal {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
 }
