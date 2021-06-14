@@ -50,10 +50,12 @@ header #title {
     justify-content: space-between;
 }
 
-#left {}
-
 #right {
     display: flex;
+}
+
+#main-content {
+    margin-top: 50px;
 }
 
 .d-block {
@@ -137,3 +139,7 @@ header #title {
     border: 0px;
     padding: 0 5px;
 }
+
+
+
+/* card */
