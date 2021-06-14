@@ -6,6 +6,9 @@
 
 :root {
     --main-color: #5100d2;
+    --green-color: #34b334;
+    --red-color: #ff0000;
+    --yellow-color: #ffff00;
 }
 
 /* resetcss */
@@ -59,7 +62,6 @@ header #title {
 
 /* Button Style */
 .btn {
-    background-color: var(--main-color);
     border: 0px;
     padding: 8px 15px;
     color: white;
@@ -67,6 +69,22 @@ header #title {
     font-weight: 600;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.btn-main {
+    background-color: var(--main-color);
+}
+
+.btn-green {
+    background-color: var(--green-color);
+}
+
+.btn-red {
+    background-color: var(--red-color);
+}
+
+.btn-yellow {
+    background-color: var(--yellow-color);
 }
 
 /* Icons style */

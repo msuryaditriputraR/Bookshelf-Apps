@@ -15,9 +15,9 @@
     </header>
     <main>
         <div class="container">
-            <div id="top">
+            <section id="top">
                 <div id="left">
-                    <button class="btn"><i class="bi bi-plus-lg"></i>Add Book</button>
+                    <button class="btn btn-main"><i class="bi bi-plus-lg"></i>Add Book</button>
                 </div>
                 <div id="right">
                     <div class="search">
@@ -25,7 +25,7 @@
                         <input type="text" class="input-search" placeholder="Type Name Book">
                     </div>
                     <div class="dropdown-filter">
-                        <button class="btn">
+                        <button class="btn btn-main">
                             <i class="bi bi-funnel-fill"></i> Filter
                         </button>
                         <div class="dropdown-filter-menu">
@@ -44,7 +44,20 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
+            <section id="bottom">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-title"></h2>
+                        <h4 class="text-subtitle"></h4>
+                        <h3 class="text-completed"></h3>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-green"></button>
+                        <button class="btn btn-red"></button>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 </body>
