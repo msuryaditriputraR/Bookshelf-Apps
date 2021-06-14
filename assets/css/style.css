@@ -198,7 +198,7 @@ header #title {
 .modal .modal-content {
     background-color: white;
     width: 450px;
-    margin: 100px auto;
+    margin: 120px auto;
     border: 1px solid #ececec;
     border-radius: 15px;
     padding: 25px;
@@ -224,4 +224,36 @@ header #title {
     color: white;
     line-height: 30px;
     cursor: pointer;
+}
+
+.modal-content .main-content {
+    margin: 30px 0;
+}
+
+.modal-content .main-content .form-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px 15px 0;
+}
+
+.modal-content .main-content .form-control input[type=text] {
+    flex: 0 0 70%;
+    border: 1px solid rgb(202, 202, 202);
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-weight: 300;
+}
+
+.modal-content .main-content .form-control:last-child {
+    justify-content: start;
+}
+
+.modal-content .main-content .form-control:last-child label {
+    text-transform: capitalize;
+    margin-right: 5px;
+}
+
+.modal-content .footer-content {
+    text-align: center;
 }
