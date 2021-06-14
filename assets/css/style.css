@@ -184,3 +184,19 @@ header #title {
 .card-footer {
     margin-top: 30px;
 }
+
+/* modal */
+.modal {
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    position: fixed;
+    background-color: rgba(70, 70, 70, 0.8);
+}
+
+.modal .modal-content {
+    background-color: white;
+    width: 500px;
+    margin: 100px auto;
+}
