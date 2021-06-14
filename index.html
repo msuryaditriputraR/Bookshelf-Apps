@@ -17,7 +17,7 @@
         <div class="container">
             <section id="top">
                 <div id="left">
-                    <button class="btn btn-main"><i class="bi bi-plus-lg"></i>Add Book</button>
+                    <button class="btn btn-main btn-modal"><i class="bi bi-plus-lg"></i>Add Book</button>
                 </div>
                 <div id="right">
                     <div class="search">
@@ -88,6 +88,36 @@
             </section>
         </div>
     </main>
+
+    <div class="modal">
+        <div class="content">
+            <div class="modal-header">
+                <h2 class="title-header">Add New Book</h2>
+                <span class="btn-closed btn-red">&times;</span>
+            </div>
+            <div class="main-header">
+                <div class="form-control">
+                    <label for="book-title">Title</label>
+                    <input type="text" id="book-title" required autofocus>
+                </div>
+                <div class="form-control">
+                    <label for="book-author">Author</label>
+                    <input type="text" id="book-author">
+                </div>
+                <div class="form-control">
+                    <label for="book-years">Years</label>
+                    <input type="text" id="book-years">
+                </div>
+                <div class="form-control">
+                    <input type="checkbox" id="book-iscomleted">
+                    <label for="book-iscomleted">is Completed</label>
+                </div>
+            </div>
+            <div class="footer-header">
+                <button class="btn btn-main">Add Book</button>
+            </div>
+        </div>
+    </div>
 
 </body>
 
