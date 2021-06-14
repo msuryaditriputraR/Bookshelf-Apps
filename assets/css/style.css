@@ -197,6 +197,31 @@ header #title {
 
 .modal .modal-content {
     background-color: white;
-    width: 500px;
+    width: 450px;
     margin: 100px auto;
+    border: 1px solid #ececec;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.modal-content .header-content {
+    text-align: center;
+    position: relative;
+}
+
+.modal-content .header-content .title-header {
+    color: var(--main-color);
+}
+
+.modal-content .header-content .btn-closed {
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 1.4em;
+    color: white;
+    line-height: 30px;
+    cursor: pointer;
 }
