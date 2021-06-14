@@ -58,8 +58,9 @@ header #title {
 
 #main-content {
     margin-top: 50px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
 }
 
 .d-block {
@@ -140,7 +141,6 @@ header #title {
 
 /* card */
 .card {
-    width: 350px;
     border: 1px solid #ececec;
     border-radius: 5px;
     box-shadow: 0px 3px 2px rgba(180, 180, 180, 0.4);
