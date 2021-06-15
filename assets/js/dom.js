@@ -3,10 +3,12 @@
     /* <button class="btn btn-green">Finish</button> */
 }
 //         <button class="btn btn-red">Delete</button>
-const createButton = (buttonColorClass, eventListener) => {
+const createButton = (buttonColorClass, eventListener, textBtn) => {
     const button = document
         .createElement('button')
         .classList.add('btn', buttonColorClass);
+
+    button.innerText = textBtn;
     button.addEventListener('click', event => {
         eventListener(event);
     });
@@ -16,7 +18,13 @@ const createButton = (buttonColorClass, eventListener) => {
 
 // NOTE: Membuat button Finish
 const finishButton = () => {
-    return createButton('btn-green', () => {
-        console.log('finish');
-    });
+    return createButton(
+        'btn-green',
+        () => {
+            console.log('finish');
+        },
+        'Finish'
+    );
 };
+
+// NOTE: Membuat button Delete
