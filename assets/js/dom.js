@@ -69,3 +69,5 @@ const deleteButton = () =>
 // NOTE: Membuat button unfinish
 const unFinishButton = () =>
     createButton('btn-grey', () => console.log('unfinish'), 'Unfinish');
+
+export { makeCardBook };
