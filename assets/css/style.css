@@ -156,12 +156,14 @@ header #title {
     font-weight: 300;
 }
 
-.text-completed {
+.text-isCompleted {
     font-size: .87em;
     margin-top: 5px;
     font-weight: 300;
-    color: #838383;
+}
 
+.uncompleted {
+    color: #838383;
 }
 
 .completed {
