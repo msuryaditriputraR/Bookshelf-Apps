@@ -17,11 +17,13 @@ const createButton = (buttonColorClass, eventListener, textBtn) => {
 };
 
 // NOTE: Membuat button Finish
-const finishButton = () => {
-    return createButton('btn-green', () => console.log('finish'), 'Finish');
-};
+const finishButton = () =>
+    createButton('btn-green', () => console.log('finish'), 'Finish');
 
 // NOTE: Membuat button Delete
-const deleteButton = () => {
-    return createButton('btn-red', () => console.log('delete'), 'Delete');
-};
+const deleteButton = () =>
+    createButton('btn-red', () => console.log('delete'), 'Delete');
+
+// NOTE: Membuat button unfinish
+const unFinishButton = () =>
+    createButton('btn-grey', () => console.log('unfinish'), 'Unfinish');
