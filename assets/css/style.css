@@ -24,6 +24,14 @@ body {
     font-family: Poppins, sans-serif;
 }
 
+.mr-3 {
+    margin-right: .3rem;
+}
+
+.ml-3 {
+    margin-left: .3rem;
+}
+
 /* Header */
 header {
     background-color: var(--main-color);
@@ -59,7 +67,7 @@ header #title {
 #main-content {
     margin-top: 50px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, 350px);
     grid-gap: 20px;
 }
 

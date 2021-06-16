@@ -1,21 +1,23 @@
+const containerCard = document.getElementById('main-content');
+
 // NOTE: Membuat Card
 const makeCardBook = (title, author, year, isCompleted) => {
-    const textTitle = document.createElement('h2').classList.add('text-title');
+    console.log(title, author, year, isCompleted);
+
+    const textTitle = document.createElement('h2');
+    textTitle.classList.add('text-title');
     textTitle.innerText = title;
 
-    const textSubtitle = document
-        .createElement('p')
-        .classList.add('text-subtitle');
+    const textSubtitle = document.createElement('p');
+    textSubtitle.classList.add('text-subtitle');
     textSubtitle.innerText = `${author} | ${year}`;
 
-    const textHeader = document
-        .createElement('div')
-        .classList.add('text-header');
+    const textHeader = document.createElement('div');
+    textHeader.classList.add('text-header');
     textHeader.append(textTitle, textSubtitle);
 
-    const textIsCompleted = document
-        .createElement('p')
-        .classList.add('text-isCompleted');
+    const textIsCompleted = document.createElement('p');
+    textIsCompleted.classList.add('text-isCompleted');
 
     if (isCompleted) {
         textIsCompleted.classList.add('completed');
@@ -25,30 +27,33 @@ const makeCardBook = (title, author, year, isCompleted) => {
         textIsCompleted.innerText = 'Uncompleted';
     }
 
-    const cardHeader = document
-        .createElement('div')
-        .classList.add('card-header');
+    const cardHeader = document.createElement('div');
+    cardHeader.classList.add('card-header');
 
     cardHeader.append(textHeader, textIsCompleted);
 
-    const cardFooter = document
-        .createElement('div')
-        .classList.add('card-footer');
+    const cardFooter = document.createElement('div');
+    cardFooter.classList.add('card-footer');
 
     if (isCompleted) cardFooter.append(unFinishButton(), deleteButton());
     else cardFooter.append(finishButton(), deleteButton());
 
-    const card = document.createElement('div').classList.add('card');
+    const card = document.createElement('div');
+    card.classList.add('card');
     card.append(cardHeader, cardFooter);
 
     return card;
 };
 
 // NOTE: Membuat abstrak Button
-const createButton = (buttonColorClass, eventListener, textBtn) => {
-    const button = document
-        .createElement('button')
-        .classList.add('btn', buttonColorClass);
+const createButton = (
+    buttonColorClass,
+    marginClass,
+    eventListener,
+    textBtn
+) => {
+    const button = document.createElement('button');
+    button.classList.add('btn', buttonColorClass, marginClass);
 
     button.innerText = textBtn;
     button.addEventListener('click', event => {
@@ -60,14 +65,16 @@ const createButton = (buttonColorClass, eventListener, textBtn) => {
 
 // NOTE: Membuat button Finish
 const finishButton = () =>
-    createButton('btn-green', () => console.log('finish'), 'Finish');
+    createButton('btn-green', 'mr-3', () => console.log('finish'), 'Finish');
 
 // NOTE: Membuat button Delete
 const deleteButton = () =>
-    createButton('btn-red', () => console.log('delete'), 'Delete');
+    createButton('btn-red', 'ml-3', () => console.log('delete'), 'Delete');
 
 // NOTE: Membuat button unfinish
 const unFinishButton = () =>
-    createButton('btn-grey', () => console.log('unfinish'), 'Unfinish');
+    createButton('btn-grey', 'mr-3', () => console.log('unfinish'), 'Unfinish');
 
-export { makeCardBook };
+const addBookButton = document.getElementById('addBookBtn');
+
+export { makeCardBook, addBookButton, containerCard };

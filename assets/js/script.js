@@ -1,3 +1,6 @@
+import { addBook } from './books.js';
+import { addBookButton } from './dom.js';
+
 // modal
 const btnModal = document.querySelector('.btn-modal');
 const modal = document.querySelector('.modal');
@@ -18,3 +21,8 @@ modal.addEventListener('click', event => {
 const toggleModal = () => {
     modal.classList.toggle('show');
 };
+
+addBookButton.addEventListener('click', () => {
+    addBook();
+    toggleModal();
+});
