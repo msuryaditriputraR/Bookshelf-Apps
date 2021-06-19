@@ -27,10 +27,20 @@ modal.addEventListener('click', event => {
 
 // NOTE: Filter
 const btnFilter = document.querySelector('.dropdown-filter button');
-const filterMenu = document.querySelector('.dropdown-filter-menu');
+const filterMenuContainer = document.querySelector('.dropdown-filter-menu');
+const filterMenu = filterMenuContainer.querySelectorAll('input');
 
 btnFilter.addEventListener('click', () => {
-    filterMenu.classList.toggle('show');
+    filterMenuContainer.classList.toggle('show');
+});
+
+filterMenuContainer.addEventListener('click', event => {
+    filterMenu.forEach(menu => {
+        if (event.target == menu) {
+            const valueFilter = event.target.value;
+            showCardFilter(valueFilter);
+        }
+    });
 });
 
 const addBookButton = document.getElementById('addBookBtn');
@@ -103,6 +113,22 @@ const updateCardBook = (cardBook, isCompleted) => {
 
         footerCard.replaceChild(finishButton(), footerCard.childNodes[0]);
     }
+};
+
+// NOTE: function untuk menampilkan buku sesuai filter
+const showCardFilter = cardFilter => {
+    const card = document.querySelectorAll('#main-content .card');
+
+    card.forEach(cd => {
+        const textIsCompleted = cd.querySelector('.text-isCompleted');
+        if (cardFilter == 'all') {
+            cd.style.display = 'block';
+        } else if (textIsCompleted.innerText.toLowerCase() == cardFilter) {
+            cd.style.display = 'block';
+        } else {
+            cd.style.display = 'none';
+        }
+    });
 };
 
 // NOTE: function delete card UI
