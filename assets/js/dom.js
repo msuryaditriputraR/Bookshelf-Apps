@@ -1,56 +1,10 @@
-import { addBook } from './books.js';
-
 import {
     finishButton,
     deleteButton,
     unFinishButton
 } from './components/button.js';
 
-// NOTE: Modal
-const btnModal = document.querySelector('.btn-modal');
-const modal = document.querySelector('.modal');
-const BtnClosedModal = document.querySelector('.btn-closed');
-
-const toggleModal = () => {
-    modal.classList.toggle('show');
-};
-
-btnModal.addEventListener('click', () => {
-    toggleModal();
-});
-
-BtnClosedModal.addEventListener('click', () => {
-    toggleModal();
-});
-
-modal.addEventListener('click', event => {
-    if (event.target == modal) toggleModal();
-});
-
-// NOTE: Filter
-const btnFilter = document.querySelector('.dropdown-filter button');
-const filterMenuContainer = document.querySelector('.dropdown-filter-menu');
-const filterMenu = filterMenuContainer.querySelectorAll('input');
-
-btnFilter.addEventListener('click', () => {
-    filterMenuContainer.classList.toggle('show');
-});
-
-filterMenuContainer.addEventListener('click', event => {
-    filterMenu.forEach(menu => {
-        if (event.target == menu) {
-            const valueFilter = event.target.value;
-            showCardFilter(valueFilter);
-        }
-    });
-});
-
-const addBookButton = document.getElementById('addBookBtn');
-
-addBookButton.addEventListener('click', () => {
-    addBook();
-    toggleModal();
-});
+import './components/modal.js';
 
 const containerCard = document.getElementById('main-content');
 
@@ -138,4 +92,10 @@ const deleteCardBook = cardElement => {
     cardElement.remove();
 };
 
-export { makeCardBook, containerCard, updateCardBook, deleteCardBook };
+export {
+    makeCardBook,
+    containerCard,
+    updateCardBook,
+    deleteCardBook,
+    showCardFilter
+};
