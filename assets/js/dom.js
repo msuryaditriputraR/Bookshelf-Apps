@@ -45,6 +45,7 @@ const makeCardBook = (title, author, year, isCompleted) => {
     return card;
 };
 
+// NOTE: function untuk merubah UI card Book
 const updateCardBook = (cardBook, isCompleted) => {
     const textIsCompleted = cardBook.querySelector('.text-isCompleted');
     const footerCard = cardBook.querySelector('.card-footer');
@@ -62,6 +63,11 @@ const updateCardBook = (cardBook, isCompleted) => {
 
         footerCard.replaceChild(finishButton(), footerCard.childNodes[0]);
     }
+};
+
+// NOTE: function delete card UI
+const deleteCardBook = cardElement => {
+    cardElement.remove();
 };
 
 // NOTE: Membuat abstrak Button
@@ -95,7 +101,16 @@ const finishButton = () =>
 
 // NOTE: Membuat button Delete
 const deleteButton = () =>
-    createButton('btn-red', 'ml-3', () => console.log('delete'), 'Delete');
+    createButton(
+        'btn-red',
+        'ml-3',
+        event => {
+            const isDelete = confirm('Are you Sure delete this book?');
+            if (isDelete)
+                deleteCardBook(event.target.parentElement.parentElement);
+        },
+        'Delete'
+    );
 
 // NOTE: Membuat button unfinish
 const unFinishButton = () =>
