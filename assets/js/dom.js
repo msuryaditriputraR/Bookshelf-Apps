@@ -1,9 +1,9 @@
+import { changeBookToCompleted, changeBookToUnCompleted } from './books.js';
+
 const containerCard = document.getElementById('main-content');
 
 // NOTE: Membuat Card
 const makeCardBook = (title, author, year, isCompleted) => {
-    console.log(title, author, year, isCompleted);
-
     const textTitle = document.createElement('h2');
     textTitle.classList.add('text-title');
     textTitle.innerText = title;
@@ -45,6 +45,25 @@ const makeCardBook = (title, author, year, isCompleted) => {
     return card;
 };
 
+const updateCardBook = (cardBook, isCompleted) => {
+    const textIsCompleted = cardBook.querySelector('.text-isCompleted');
+    const footerCard = cardBook.querySelector('.card-footer');
+
+    if (isCompleted) {
+        textIsCompleted.classList.remove('uncompleted');
+        textIsCompleted.classList.add('completed');
+        textIsCompleted.innerText = 'Completed';
+
+        footerCard.replaceChild(unFinishButton(), footerCard.childNodes[0]);
+    } else {
+        textIsCompleted.classList.remove('completed');
+        textIsCompleted.classList.add('uncompleted');
+        textIsCompleted.innerText = 'Uncompleted';
+
+        footerCard.replaceChild(finishButton(), footerCard.childNodes[0]);
+    }
+};
+
 // NOTE: Membuat abstrak Button
 const createButton = (
     buttonColorClass,
@@ -65,7 +84,14 @@ const createButton = (
 
 // NOTE: Membuat button Finish
 const finishButton = () =>
-    createButton('btn-green', 'mr-3', () => console.log('finish'), 'Finish');
+    createButton(
+        'btn-green',
+        'mr-3',
+        event => {
+            changeBookToCompleted(event.target.parentElement.parentElement);
+        },
+        'Finish'
+    );
 
 // NOTE: Membuat button Delete
 const deleteButton = () =>
@@ -73,8 +99,13 @@ const deleteButton = () =>
 
 // NOTE: Membuat button unfinish
 const unFinishButton = () =>
-    createButton('btn-grey', 'mr-3', () => console.log('unfinish'), 'Unfinish');
+    createButton(
+        'btn-grey',
+        'mr-3',
+        event => changeBookToUnCompleted(event.target.parentNode.parentNode),
+        'Unfinish'
+    );
 
 const addBookButton = document.getElementById('addBookBtn');
 
-export { makeCardBook, addBookButton, containerCard };
+export { makeCardBook, addBookButton, containerCard, updateCardBook };

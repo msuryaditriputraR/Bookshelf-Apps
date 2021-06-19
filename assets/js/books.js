@@ -1,4 +1,4 @@
-import { containerCard, makeCardBook } from './dom.js';
+import { containerCard, makeCardBook, updateCardBook } from './dom.js';
 
 const addBook = () => {
     const title = document.getElementById('book-title');
@@ -22,4 +22,12 @@ const addBook = () => {
     // console.log(title, author, years, isCompleted);
 };
 
-export { addBook };
+const changeBookToCompleted = cardBookElement => {
+    updateCardBook(cardBookElement, true);
+};
+
+const changeBookToUnCompleted = cardBookElement => {
+    updateCardBook(cardBookElement, false);
+};
+
+export { addBook, changeBookToCompleted, changeBookToUnCompleted };
