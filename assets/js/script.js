@@ -1,10 +1,11 @@
 import { addBook } from './books.js';
-import { addBookButton } from './dom.js';
-
-// modal
-const btnModal = document.querySelector('.btn-modal');
-const modal = document.querySelector('.modal');
-const BtnClosedModal = document.querySelector('.btn-closed');
+import {
+    addBookButton,
+    btnModal,
+    modal,
+    toggleModal,
+    BtnClosedModal
+} from './dom.js';
 
 btnModal.addEventListener('click', () => {
     toggleModal();
@@ -17,10 +18,6 @@ BtnClosedModal.addEventListener('click', () => {
 modal.addEventListener('click', event => {
     if (event.target == modal) toggleModal();
 });
-
-const toggleModal = () => {
-    modal.classList.toggle('show');
-};
 
 addBookButton.addEventListener('click', () => {
     addBook();

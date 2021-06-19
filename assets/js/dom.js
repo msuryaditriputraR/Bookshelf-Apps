@@ -1,5 +1,14 @@
 import { changeBookToCompleted, changeBookToUnCompleted } from './books.js';
 
+// NOTE: Modal
+const btnModal = document.querySelector('.btn-modal');
+const modal = document.querySelector('.modal');
+const BtnClosedModal = document.querySelector('.btn-closed');
+
+const toggleModal = () => {
+    modal.classList.toggle('show');
+};
+
 const containerCard = document.getElementById('main-content');
 
 // NOTE: Membuat Card
@@ -123,4 +132,13 @@ const unFinishButton = () =>
 
 const addBookButton = document.getElementById('addBookBtn');
 
-export { makeCardBook, addBookButton, containerCard, updateCardBook };
+export {
+    btnModal,
+    modal,
+    toggleModal,
+    BtnClosedModal,
+    makeCardBook,
+    addBookButton,
+    containerCard,
+    updateCardBook
+};
