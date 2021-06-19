@@ -27,6 +27,11 @@ modal.addEventListener('click', event => {
 
 // NOTE: Filter
 const btnFilter = document.querySelector('.dropdown-filter button');
+const filterMenu = document.querySelector('.dropdown-filter-menu');
+
+btnFilter.addEventListener('click', () => {
+    filterMenu.classList.toggle('show');
+});
 
 const addBookButton = document.getElementById('addBookBtn');
 

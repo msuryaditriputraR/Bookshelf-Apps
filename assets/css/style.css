@@ -122,6 +122,10 @@ header #title {
     display: none;
 }
 
+.dropdown-filter .dropdown-filter-menu.show {
+    display: block;
+}
+
 .dropdown-filter .dropdown-filter-menu .menu {
     font-size: .9rem;
 }
