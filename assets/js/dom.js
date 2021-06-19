@@ -1,4 +1,8 @@
-import { changeBookToCompleted, changeBookToUnCompleted } from './books.js';
+import {
+    changeBookToCompleted,
+    changeBookToUnCompleted,
+    addBook
+} from './books.js';
 
 // NOTE: Modal
 const btnModal = document.querySelector('.btn-modal');
@@ -8,6 +12,28 @@ const BtnClosedModal = document.querySelector('.btn-closed');
 const toggleModal = () => {
     modal.classList.toggle('show');
 };
+
+btnModal.addEventListener('click', () => {
+    toggleModal();
+});
+
+BtnClosedModal.addEventListener('click', () => {
+    toggleModal();
+});
+
+modal.addEventListener('click', event => {
+    if (event.target == modal) toggleModal();
+});
+
+// NOTE: Filter
+const btnFilter = document.querySelector('.dropdown-filter button');
+
+const addBookButton = document.getElementById('addBookBtn');
+
+addBookButton.addEventListener('click', () => {
+    addBook();
+    toggleModal();
+});
 
 const containerCard = document.getElementById('main-content');
 
@@ -130,15 +156,4 @@ const unFinishButton = () =>
         'Unfinish'
     );
 
-const addBookButton = document.getElementById('addBookBtn');
-
-export {
-    btnModal,
-    modal,
-    toggleModal,
-    BtnClosedModal,
-    makeCardBook,
-    addBookButton,
-    containerCard,
-    updateCardBook
-};
+export { makeCardBook, containerCard, updateCardBook };
