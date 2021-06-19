@@ -1,5 +1,5 @@
 import { changeBookToCompleted, changeBookToUnCompleted } from './../books.js';
-import { deleteCardBook } from './../dom.js';
+import { deleteCardBook } from './card.js';
 
 // NOTE: Membuat abstrak Button
 const createButton = (

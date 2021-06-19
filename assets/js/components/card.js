@@ -1,10 +1,4 @@
-import {
-    finishButton,
-    deleteButton,
-    unFinishButton
-} from './components/button.js';
-
-import './components/modal.js';
+import { finishButton, deleteButton, unFinishButton } from './button.js';
 
 const containerCard = document.getElementById('main-content');
 

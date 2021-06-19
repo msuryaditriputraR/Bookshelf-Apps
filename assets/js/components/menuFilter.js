@@ -1,4 +1,4 @@
-import { showCardFilter } from './../dom.js';
+import { showCardFilter } from './card.js';
 
 // NOTE: Filter
 const btnFilter = document.querySelector('.dropdown-filter button');

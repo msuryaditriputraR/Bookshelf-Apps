@@ -1,4 +1,8 @@
-import { containerCard, makeCardBook, updateCardBook } from './dom.js';
+import {
+    containerCard,
+    makeCardBook,
+    updateCardBook
+} from './components/card.js';
 
 const addBook = () => {
     const title = document.getElementById('book-title');
