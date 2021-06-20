@@ -1,7 +1,8 @@
 import {
     containerCard,
     makeCardBook,
-    updateCardBook
+    updateCardBook,
+    showCardFilter
 } from './components/card.js';
 
 const addBook = () => {
@@ -18,6 +19,10 @@ const addBook = () => {
     );
     containerCard.append(cardBook);
 
+    // NOTE: When add new book, filter back to All and show All books
+    const allFilter = document.querySelector('input#all');
+    allFilter.checked = true;
+    showCardFilter(allFilter.value);
     // NOTE: reset value input when add Button clicked
     title.value = '';
     author.value = '';
