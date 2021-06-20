@@ -9,7 +9,7 @@ const addBook = () => {
     const title = document.getElementById('book-title');
     const author = document.getElementById('book-author');
     const years = document.getElementById('book-years');
-    const isCompleted = document.getElementById('book-iscomleted');
+    const isCompleted = document.getElementById('book-iscompleted');
 
     const cardBook = makeCardBook(
         title.value,
