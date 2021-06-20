@@ -107,7 +107,6 @@ header #title {
     position: relative;
     display: inline-block;
     margin-right: 20px;
-    cursor: pointer;
 }
 
 .dropdown-filter .dropdown-filter-menu {
@@ -132,6 +131,11 @@ header #title {
 
 .dropdown-filter .dropdown-filter-menu .menu label {
     margin-left: 5px;
+}
+
+.dropdown-filter .dropdown-filter-menu .menu label,
+.dropdown-filter .dropdown-filter-menu .menu input {
+    cursor: pointer;
 }
 
 /* Input Search */
