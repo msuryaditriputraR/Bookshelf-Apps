@@ -90,6 +90,14 @@ document.addEventListener(
             element.addEventListener(
                 'click',
                 () => {
+                    const titleValue = document
+                        .querySelector('#book-title')
+                        .value.trim();
+
+                    if (!titleValue) {
+                        alert('Title is Required!.');
+                        return;
+                    }
                     addBook();
                     toggleModal();
                 },
