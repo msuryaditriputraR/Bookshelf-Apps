@@ -1,10 +1,17 @@
-import { changeBookToCompleted, changeBookToUnCompleted } from './../books.js';
+import {
+    changeBookToCompleted,
+    changeBookToUnCompleted,
+    addBook
+} from './../books.js';
 import { deleteCardBook } from './card.js';
+import { toggleModal } from './modal.js';
 
 // NOTE: Membuat abstrak Button
-const createButton = ({ className, eventListener, textBtn }) => {
+const createButton = ({ className, eventListener, textBtn, idBtn }) => {
     const button = document.createElement('button');
     button.classList.add('btn', ...className);
+
+    if (idBtn) button.setAttribute('id', idBtn);
 
     button.innerText = textBtn;
     button.addEventListener('click', event => {
@@ -45,4 +52,23 @@ const unFinishButton = () =>
         textBtn: 'Unfinish'
     });
 
-export { finishButton, deleteButton, unFinishButton };
+const addNewBookBtn = () =>
+    createButton({
+        className: ['btn-main'],
+        textBtn: 'Add Book',
+        idBtn: 'addBookBtn',
+        eventListener: () => {
+            const titleValue = document
+                .querySelector('#book-title')
+                .value.trim();
+
+            if (!titleValue) {
+                alert('Title is Required!.');
+                return;
+            }
+            addBook();
+            toggleModal();
+        }
+    });
+
+export { finishButton, deleteButton, unFinishButton, addNewBookBtn };
