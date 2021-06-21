@@ -8,8 +8,10 @@
     --main-color: #5100d2;
     --green-color: #34b334;
     --red-color: #ff0000;
+    --yellow-color: #ffbb00;
     --grey-color: #888888;
     --text-green: #22811c;
+
 }
 
 /* resetcss */
@@ -92,6 +94,18 @@ header #title {
 
 .btn-yellow {
     background-color: var(--yellow-color);
+}
+
+.btn-green {
+    background-color: var(--green-color);
+}
+
+.btn-red {
+    background-color: var(--red-color);
+}
+
+.btn-grey {
+    background-color: var(--grey-color);
 }
 
 /* Icons style */
@@ -185,18 +199,6 @@ header #title {
 .completed {
     color: var(--text-green);
     font-weight: bold;
-}
-
-.btn-green {
-    background-color: var(--green-color);
-}
-
-.btn-red {
-    background-color: var(--red-color);
-}
-
-.btn-grey {
-    background-color: var(--grey-color);
 }
 
 .card-footer {

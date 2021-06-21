@@ -52,6 +52,17 @@ const unFinishButton = () =>
         textBtn: 'Unfinish'
     });
 
+//NoTE: Membuat button edit
+const editButton = () =>
+    createButton({
+        className: ['btn-yellow', 'ml-3', 'mr-3'],
+        textBtn: 'Edit',
+        eventListener: event => {
+            console.log(event.target);
+        }
+    });
+
+//NOTE: Membuat button add book pada modal
 const addNewBookBtn = () =>
     createButton({
         className: ['btn-main'],
@@ -71,4 +82,10 @@ const addNewBookBtn = () =>
         }
     });
 
-export { finishButton, deleteButton, unFinishButton, addNewBookBtn };
+export {
+    finishButton,
+    deleteButton,
+    unFinishButton,
+    addNewBookBtn,
+    editButton
+};

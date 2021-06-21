@@ -1,4 +1,9 @@
-import { finishButton, deleteButton, unFinishButton } from './button.js';
+import {
+    finishButton,
+    deleteButton,
+    unFinishButton,
+    editButton
+} from './button.js';
 
 const containerCard = document.getElementById('main-content');
 
@@ -35,8 +40,9 @@ const makeCardBook = (title, author, year, isCompleted) => {
     const cardFooter = document.createElement('div');
     cardFooter.classList.add('card-footer');
 
-    if (isCompleted) cardFooter.append(unFinishButton(), deleteButton());
-    else cardFooter.append(finishButton(), deleteButton());
+    if (isCompleted)
+        cardFooter.append(unFinishButton(), editButton(), deleteButton());
+    else cardFooter.append(finishButton(), editButton(), deleteButton());
 
     const card = document.createElement('div');
     card.classList.add('card');
