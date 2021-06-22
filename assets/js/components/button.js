@@ -59,8 +59,10 @@ const editButton = () =>
     createButton({
         className: ['btn-yellow', 'ml-3', 'mr-3'],
         textBtn: 'Edit',
-        eventListener: event =>
-            getValueInputModal(event.target.parentNode.parentNode)
+        eventListener: event => {
+            getValueInputModal(event.target.parentNode.parentNode);
+            toggleModal();
+        }
     });
 
 //NOTE: Membuat button add book pada modal
@@ -77,10 +79,17 @@ const addNewBookBtn = () =>
         }
     });
 
+const editFormModalBtn = () =>
+    createButton({
+        className: ['btn-yellow'],
+        textBtn: 'Edit Book',
+        eventListener: () => {}
+    });
 export {
     finishButton,
     deleteButton,
     unFinishButton,
     addNewBookBtn,
-    editButton
+    editButton,
+    editFormModalBtn
 };

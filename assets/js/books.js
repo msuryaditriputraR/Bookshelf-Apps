@@ -4,7 +4,7 @@ import {
     updateCardBook,
     showCardFilter
 } from './components/card.js';
-import { formModal } from './components/modal.js';
+import { editBookModal, formModal } from './components/modal.js';
 
 const addBook = () => {
     const title = document.getElementById('book-title');
@@ -92,10 +92,10 @@ const getValueInputModal = cardBookElement => {
             }
         }
 
-        console.log(newInput);
+        return newInput;
     });
 
-    console.log(arrValueFormModal);
+    editBookModal(arrValueFormModal, 'Edit Book', true);
 };
 
 export {

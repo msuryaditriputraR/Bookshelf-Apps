@@ -1,4 +1,4 @@
-import { addNewBookBtn } from './button.js';
+import { addNewBookBtn, editFormModalBtn } from './button.js';
 
 const formModal = [
     { id: 'book-title', type: 'text', text: 'Title' },
@@ -47,7 +47,7 @@ const makeModal = (inputModal, textHeader, isEdit) => {
     footerContent.className = 'footer-content';
 
     let btnModal;
-    !isEdit ? (btnModal = addNewBookBtn()) : '';
+    isEdit ? (btnModal = editFormModalBtn()) : (btnModal = addNewBookBtn());
 
     footerContent.append(btnModal);
 
@@ -64,8 +64,9 @@ const addBookModal = (inputModal, textHeader, isEdit) =>
     makeModal(inputModal, textHeader, isEdit);
 
 // NOTE: Make Edit Book Modal
-const editBookModal = (inputModal, textHeader, isEdit) =>
-    makeModal(inputModal, textHeader, isEdit);
+const editBookModal = (inputModal, textHeader, isEdit) => {
+    modal.append(makeModal(inputModal, textHeader, isEdit));
+};
 
 // NOTE: Modal
 const addBtnModal = document.querySelector('.add-btn-modal');
@@ -74,6 +75,9 @@ const modal = document.querySelector('.modal');
 
 const toggleModal = () => {
     modal.classList.toggle('show');
+    if (!modal.classList.contains('show')) {
+        modal.querySelector('.modal-content').remove();
+    }
 };
 
 document.addEventListener(
@@ -94,12 +98,8 @@ document.addEventListener(
 );
 
 addBtnModal.addEventListener('click', () => {
-    const modalContent = document.querySelector('.modal-content');
-
-    if (!modalContent) {
-        const modalAddBook = addBookModal(formModal, 'Add New Book', false);
-        modal.append(modalAddBook);
-    }
+    const modalAddBook = addBookModal(formModal, 'Add New Book', false);
+    modal.append(modalAddBook);
 
     toggleModal();
 });
