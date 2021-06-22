@@ -37,6 +37,8 @@ const makeModal = (inputModal, textHeader, isEdit) => {
         inputModal.setAttribute('type', input.type);
         inputModal.setAttribute('id', input.id);
 
+        if (input.value) inputModal.value = input.value;
+
         formControl.append(labelModal, inputModal);
         mainContent.append(formControl);
     });
@@ -57,9 +59,13 @@ const makeModal = (inputModal, textHeader, isEdit) => {
     return modalContent;
 };
 
-const addBookModal = (inputModal, textHeader, isEdit) => {
-    return makeModal(inputModal, textHeader, isEdit);
-};
+// NOTE: Make add New Book Modal
+const addBookModal = (inputModal, textHeader, isEdit) =>
+    makeModal(inputModal, textHeader, isEdit);
+
+// NOTE: Make Edit Book Modal
+const editBookModal = (inputModal, textHeader, isEdit) =>
+    makeModal(inputModal, textHeader, isEdit);
 
 // NOTE: Modal
 const addBtnModal = document.querySelector('.add-btn-modal');
@@ -102,4 +108,4 @@ modal.addEventListener('click', event => {
     if (event.target == modal) toggleModal();
 });
 
-export { toggleModal };
+export { toggleModal, formModal, editBookModal };

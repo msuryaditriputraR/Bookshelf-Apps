@@ -1,7 +1,8 @@
 import {
     changeBookToCompleted,
     changeBookToUnCompleted,
-    addBook
+    addBook,
+    getValueInputModal
 } from './../books.js';
 import { deleteCardBook } from './card.js';
 import { toggleModal } from './modal.js';
@@ -57,9 +58,8 @@ const editButton = () =>
     createButton({
         className: ['btn-yellow', 'ml-3', 'mr-3'],
         textBtn: 'Edit',
-        eventListener: event => {
-            console.log(event.target);
-        }
+        eventListener: event =>
+            getValueInputModal(event.target.parentNode.parentNode)
     });
 
 //NOTE: Membuat button add book pada modal
