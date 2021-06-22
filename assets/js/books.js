@@ -47,7 +47,7 @@ const validationInput = () => {
     let isValid = true;
 
     inputText.forEach(inp => {
-        if (!inp.value) {
+        if (!inp.value.trim()) {
             alert(inp.previousSibling.innerText + ' is Required');
             isValid = false;
         }
