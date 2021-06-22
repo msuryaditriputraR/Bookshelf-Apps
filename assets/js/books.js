@@ -40,6 +40,21 @@ const changeBookToUnCompleted = cardBookElement => {
     updateCardBook(cardBookElement, false);
 };
 
+const validationInput = () => {
+    const modalContent = document.querySelector('.main-content');
+    const inputText = modalContent.querySelectorAll('input[type = text]');
+
+    let isValid = true;
+
+    inputText.forEach(inp => {
+        if (!inp.value) {
+            alert(inp.previousSibling.innerText + ' is Required');
+            isValid = false;
+        }
+    });
+    return isValid;
+};
+
 const getValueInputModal = cardBookElement => {
     const titleValue = cardBookElement.querySelector('.text-title').innerText;
     const textSubtitle =
@@ -87,5 +102,6 @@ export {
     addBook,
     changeBookToCompleted,
     changeBookToUnCompleted,
-    getValueInputModal
+    getValueInputModal,
+    validationInput
 };

@@ -2,7 +2,8 @@ import {
     changeBookToCompleted,
     changeBookToUnCompleted,
     addBook,
-    getValueInputModal
+    getValueInputModal,
+    validationInput
 } from './../books.js';
 import { deleteCardBook } from './card.js';
 import { toggleModal } from './modal.js';
@@ -69,16 +70,10 @@ const addNewBookBtn = () =>
         textBtn: 'Add Book',
         idBtn: 'addBookBtn',
         eventListener: () => {
-            const titleValue = document
-                .querySelector('#book-title')
-                .value.trim();
-
-            if (!titleValue) {
-                alert('Title is Required!.');
-                return;
+            if (validationInput()) {
+                addBook();
+                toggleModal();
             }
-            addBook();
-            toggleModal();
         }
     });
 
