@@ -52,9 +52,27 @@ const makeCardBook = (title, author, year, isCompleted) => {
 };
 
 // NOTE: function untuk merubah UI card Book
-const updateCardBook = (cardBook, isCompleted) => {
+const updateCardBook = (cardBook, { title, author, years, isCompleted }) => {
+    const textTitle = cardBook.querySelector('.text-title');
+    const textSubtitle = cardBook.querySelector('.text-subtitle');
     const textIsCompleted = cardBook.querySelector('.text-isCompleted');
     const footerCard = cardBook.querySelector('.card-footer');
+
+    const subtitle = textSubtitle.innerText.split(' | ');
+
+    const [textAuthor, textYears] = subtitle;
+
+    if (title) textTitle.innerText = title;
+    if (author || years) {
+        if (author != textAuthor && years != textYears)
+            textSubtitle.innerText = `${author} | ${years}`;
+        else {
+            if (author != textAuthor)
+                textSubtitle.innerText = `${author} | ${textYears}`;
+            if (years != textYears)
+                textSubtitle.innerText = `${textAuthor} | ${years}`;
+        }
+    }
 
     if (isCompleted) {
         textIsCompleted.classList.remove('uncompleted');

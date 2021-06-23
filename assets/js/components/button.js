@@ -3,7 +3,8 @@ import {
     changeBookToUnCompleted,
     addBook,
     getValueInputModal,
-    validationInput
+    validationInput,
+    editBook
 } from './../books.js';
 import { deleteCardBook } from './card.js';
 import { toggleModal } from './modal.js';
@@ -79,11 +80,14 @@ const addNewBookBtn = () =>
         }
     });
 
-const editFormModalBtn = () =>
+const editFormModalBtn = cardElement =>
     createButton({
         className: ['btn-yellow'],
         textBtn: 'Edit Book',
-        eventListener: () => {}
+        eventListener: () => {
+            editBook(cardElement);
+            toggleModal();
+        }
     });
 export {
     finishButton,

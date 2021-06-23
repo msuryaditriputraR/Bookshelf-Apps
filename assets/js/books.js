@@ -33,11 +33,11 @@ const addBook = () => {
 };
 
 const changeBookToCompleted = cardBookElement => {
-    updateCardBook(cardBookElement, true);
+    updateCardBook(cardBookElement, { isCompleted: true });
 };
 
 const changeBookToUnCompleted = cardBookElement => {
-    updateCardBook(cardBookElement, false);
+    updateCardBook(cardBookElement, { isCompleted: false });
 };
 
 const validationInput = () => {
@@ -95,11 +95,24 @@ const getValueInputModal = cardBookElement => {
         return newInput;
     });
 
-    editBookModal(arrValueFormModal, 'Edit Book', true);
+    editBookModal(arrValueFormModal, 'Edit Book', {
+        isEdit: true,
+        cardElement: cardBookElement
+    });
+};
+
+const editBook = cardElement => {
+    const title = document.getElementById('book-title').value;
+    const author = document.getElementById('book-author').value;
+    const years = document.getElementById('book-years').value;
+    const isCompleted = document.getElementById('book-iscompleted').checked;
+
+    updateCardBook(cardElement, { title, author, years, isCompleted });
 };
 
 export {
     addBook,
+    editBook,
     changeBookToCompleted,
     changeBookToUnCompleted,
     getValueInputModal,

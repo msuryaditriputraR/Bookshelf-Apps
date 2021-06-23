@@ -8,7 +8,7 @@ const formModal = [
 ];
 
 // NOTE: make an abstraction of modal
-const makeModal = (inputModal, textHeader, isEdit) => {
+const makeModal = (inputModal, textHeader, { isEdit, cardElement }) => {
     const headerContent = document.createElement('div');
     headerContent.classList.add('header-content');
 
@@ -47,7 +47,9 @@ const makeModal = (inputModal, textHeader, isEdit) => {
     footerContent.className = 'footer-content';
 
     let btnModal;
-    isEdit ? (btnModal = editFormModalBtn()) : (btnModal = addNewBookBtn());
+    isEdit
+        ? (btnModal = editFormModalBtn(cardElement))
+        : (btnModal = addNewBookBtn());
 
     footerContent.append(btnModal);
 
@@ -98,7 +100,9 @@ document.addEventListener(
 );
 
 addBtnModal.addEventListener('click', () => {
-    const modalAddBook = addBookModal(formModal, 'Add New Book', false);
+    const modalAddBook = addBookModal(formModal, 'Add New Book', {
+        isEdit: false
+    });
     modal.append(modalAddBook);
 
     toggleModal();
