@@ -51,7 +51,13 @@ const validationInput = () => {
             alert(inp.previousSibling.innerText + ' is Required');
             isValid = false;
         }
+
+        if (inp.id == 'book-years' && inp.value.match(/\D/g)) {
+            alert(inp.previousSibling.innerText + ' must a number!');
+            isValid = false;
+        }
     });
+
     return isValid;
 };
 
