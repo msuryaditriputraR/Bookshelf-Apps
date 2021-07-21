@@ -4,7 +4,6 @@ import { showCardFilter } from './card.js';
 const btnFilter = document.querySelector('.dropdown-filter button');
 const filterMenuContainer = document.querySelector('.dropdown-filter-menu');
 const filterMenu = filterMenuContainer.querySelectorAll('.menu');
-// const filterMenuInput = filterMenu.querySelectorAll('input');
 
 btnFilter.addEventListener('click', () => {
     filterMenuContainer.classList.toggle('show');
