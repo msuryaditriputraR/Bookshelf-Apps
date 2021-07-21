@@ -85,8 +85,10 @@ const editFormModalBtn = cardElement =>
         className: ['btn-yellow'],
         textBtn: 'Edit Book',
         eventListener: () => {
-            editBook(cardElement);
-            toggleModal();
+            if (validationInput()) {
+                editBook(cardElement);
+                toggleModal();
+            }
         }
     });
 export {
