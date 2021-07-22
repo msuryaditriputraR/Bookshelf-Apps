@@ -110,7 +110,7 @@ const showCardFilter = cardFilter => {
         }
     });
     // NOTE: agar search tetap jalan ketika di filter
-    showCardSearch(valueSearch[0]);
+    showCardSearch(valueSearch[0] || '');
 };
 
 const showCardSearch = keyword => {

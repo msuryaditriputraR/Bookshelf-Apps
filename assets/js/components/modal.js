@@ -38,6 +38,8 @@ const makeModal = (inputModal, textHeader, { isEdit, cardElement }) => {
         inputModal.setAttribute('id', input.id);
 
         if (input.value) inputModal.value = input.value;
+        if (input.id === 'book-iscompleted' && input.isChecked)
+            inputModal.checked = input.isChecked;
 
         formControl.append(labelModal, inputModal);
         mainContent.append(formControl);
@@ -104,7 +106,6 @@ addBtnModal.addEventListener('click', () => {
         isEdit: false
     });
     modal.append(modalAddBook);
-
     toggleModal();
 });
 
