@@ -95,12 +95,43 @@ const showCardFilter = cardFilter => {
 
     card.forEach(cd => {
         const textIsCompleted = cd.querySelector('.text-isCompleted');
-        if (cardFilter == 'all') {
+        if (cardFilter === 'all') {
             cd.style.display = 'block';
         } else if (textIsCompleted.innerText.toLowerCase() == cardFilter) {
             cd.style.display = 'block';
         } else {
             cd.style.display = 'none';
+        }
+    });
+};
+
+const showCardSearch = keyword => {
+    const card = document.querySelectorAll('#main-content .card');
+    const regex = new RegExp(keyword, 'ig');
+
+    card.forEach(cd => {
+        const nameBook = cd.querySelector('.text-title');
+        const nameBookText = nameBook.innerText.toLowerCase();
+        const subtitle = cd.querySelector('.text-subtitle');
+        const subtitleText = subtitle.innerText.toLowerCase();
+
+        const macthKeyword = `<span class='hl'>${keyword.toLowerCase()}</span>`;
+        if (nameBookText.match(regex) || subtitleText.match(regex))
+            cd.style.display = 'block';
+        else cd.style.display = 'none';
+
+        if (nameBookText.match(regex) && keyword) {
+            const name = nameBookText.replace(regex, macthKeyword);
+            nameBook.innerHTML = name;
+        } else {
+            nameBook.innerHTML = nameBookText;
+        }
+
+        if (subtitleText.match(regex) && keyword) {
+            const textSubtitle = subtitleText.replace(regex, macthKeyword);
+            subtitle.innerHTML = textSubtitle;
+        } else {
+            subtitle.innerHTML = subtitleText;
         }
     });
 };
@@ -115,5 +146,6 @@ export {
     containerCard,
     updateCardBook,
     deleteCardBook,
-    showCardFilter
+    showCardFilter,
+    showCardSearch
 };
