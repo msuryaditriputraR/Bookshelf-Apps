@@ -5,6 +5,8 @@ import {
     editButton
 } from './button.js';
 
+import valueSearch from './search.js';
+
 const containerCard = document.getElementById('main-content');
 
 // NOTE: Membuat Card
@@ -107,6 +109,8 @@ const showCardFilter = cardFilter => {
             cd.style.display = 'none';
         }
     });
+    // NOTE: agar search tetap jalan ketika di filter
+    showCardSearch(valueSearch[0]);
 };
 
 const showCardSearch = keyword => {
