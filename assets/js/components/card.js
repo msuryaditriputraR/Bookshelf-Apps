@@ -89,15 +89,19 @@ const updateCardBook = (cardBook, { title, author, years, isCompleted }) => {
     }
 };
 
+const cardsFilter = [];
+
 // NOTE: function untuk menampilkan buku sesuai filter
 const showCardFilter = cardFilter => {
     const card = document.querySelectorAll('#main-content .card');
-
+    cardsFilter.length = 0;
     card.forEach(cd => {
         const textIsCompleted = cd.querySelector('.text-isCompleted');
         if (cardFilter === 'all') {
+            cardsFilter.push(cd);
             cd.style.display = 'block';
         } else if (textIsCompleted.innerText.toLowerCase() == cardFilter) {
+            cardsFilter.push(cd);
             cd.style.display = 'block';
         } else {
             cd.style.display = 'none';
@@ -106,10 +110,11 @@ const showCardFilter = cardFilter => {
 };
 
 const showCardSearch = keyword => {
-    const card = document.querySelectorAll('#main-content .card');
     const regex = new RegExp(keyword, 'ig');
 
-    card.forEach(cd => {
+    console.log(cardsFilter);
+
+    cardsFilter.forEach(cd => {
         const nameBook = cd.querySelector('.text-title');
         const nameBookText = nameBook.innerText.toLowerCase();
         const subtitle = cd.querySelector('.text-subtitle');
