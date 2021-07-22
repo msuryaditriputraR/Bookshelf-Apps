@@ -112,8 +112,6 @@ const showCardFilter = cardFilter => {
 const showCardSearch = keyword => {
     const regex = new RegExp(keyword, 'ig');
 
-    console.log(cardsFilter);
-
     cardsFilter.forEach(cd => {
         const nameBook = cd.querySelector('.text-title');
         const nameBookText = nameBook.innerText.toLowerCase();
